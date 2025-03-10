@@ -1,0 +1,81 @@
+/* Links */
+.link .arrow{
+display: flex;
+width: 1.5rem;
+height: 1.5rem;
+justify-content: center;
+align-items: center;
+}
+.link .rightarrow{
+content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cg clip-path='url(%23clip0_6266_760)'%3E%3Cpath d='M12 4L10.59 5.41L16.17 11H4V13H16.17L10.59 18.59L12 20L20 12L12 4Z' fill='%23522926'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_6266_760'%3E%3Crect width='24' height='24' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+}
+.link .downtarrow{
+content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cg clip-path='url(%23clip0_6266_2286)'%3E%3Cpath d='M20 12L18.59 10.59L13 16.17V4H11V16.17L5.41 10.59L4 12L12 20L20 12Z' fill='%23522926'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_6266_2286'%3E%3Crect width='24' height='24' fill='white' transform='matrix(0 1 -1 0 24 0)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+}
+.link .text{
+color: var(--Brand-Brown, #522926);
+font-feature-settings: 'liga' off, 'clig' off;
+
+/* Desktop/Body/Bold/3 */
+font-family: Sinteca;
+font-size: 0.875rem;
+font-style: normal;
+font-weight: 700;
+line-height: 1.375rem; /* 157.143% */
+}
+/* Mobile */
+.link{
+display: inline-flex;
+justify-content: center;
+align-items: center;
+gap: 0.3125rem;
+}
+
+.link .rightarrow:focus{
+border-bottom: 2px solid var(--Brand-Orange, #FC7D57);
+}
+.link .downarrow:focus{
+border-bottom: 2px solid #000;
+}
+/* Desktop */
+.link{
+display: inline-flex;
+justify-content: center;
+align-items: center;
+gap: 0.3125rem;
+}
+
+.link .rightarrow:hover{
+border-bottom: 2px solid var(--Brand-Orange, #FC7D57);
+}
+.link .downarrow:hover{
+border-bottom: 2px solid #000;
+}
+.link:focus{
+border: 3px solid rgba(38, 84, 125, 0.80);
+}
+
+/* Navigation Links */
+.navlink{
+display: inline-flex;
+justify-content: center;
+align-items: center;
+gap: 0.3125rem;
+}
+.navlink .text{
+color: var(--Brand-Brown, #522926);
+font-feature-settings: 'liga' off, 'clig' off;
+
+/* Desktop/Body/Bold/2 */
+font-family: Sinteca;
+font-size: 1rem;
+font-style: normal;
+font-weight: 700;
+line-height: 1.5rem; /* 150% */
+}
+
+/* Navlink Desktop */
+.navlink:hover{
+
+}
+

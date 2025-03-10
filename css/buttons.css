@@ -1,0 +1,39 @@
+.button{
+display: inline-flex;
+padding: 0.625rem 0.625rem 0.5rem 0.625rem;
+align-items: center;
+gap: 0.625rem;
+}
+.orangebutton{
+background: var(--Brand-Orange, #FC7D57);
+}
+.orangebutton:active, .orangebutton:hover{
+background: #FB511E;
+}
+.brownbutton{
+background: var(--Brand-Brown, #522926);
+}
+.brownbutton:active, .brownbutton:hover{
+background: linear-gradient(0deg, rgba(252, 125, 87, 0.15) 0%, rgba(252, 125, 87, 0.15) 100%), #522926;
+}
+/* Desktop*/
+.button{
+padding: 0.9375rem 1.25rem 0.75rem 1.25rem;
+}
+.button .copy{
+display: flex;
+padding-top: 0.1875rem;
+justify-content: center;
+align-items: center;
+gap: 0.625rem;
+}
+.button .copy .text{
+color: var(--Brand-Brown, #522926);
+font-feature-settings: 'liga' off, 'clig' off;
+
+/* Desktop/Body/Bold/3 */
+font-family: Sinteca;
+font-size: 0.875rem;
+font-style: normal;
+font-weight: 700;
+line-height: 1.375rem; /* 157.143% */
