@@ -1319,7 +1319,7 @@ background: var(--Brand-Orange, #FC7D57);
         & li::marker{
           content: '✓  ';
           font-size: 2rem;
-          color: green;
+          color: var(--Brand-Green);
           xcontent: url('/images/done.svg') '  ';
         }
       }
