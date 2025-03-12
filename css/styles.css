@@ -182,7 +182,9 @@ html {
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
+  scroll-behavior: smooth;
 }
+
 
 /* Remove default margin in favour of better control in authored CSS */
 body, h1, h2, h3, h4, p,
@@ -786,15 +788,37 @@ nav .pagelinks {
   width:fit-content;
   grid-column-start: 14;
 }
-nav .navigation-link{
+nav .navigation-link a{
+text-decoration: none;
 display: flex;
-xjustify-content: center;
-xalign-items: center;
 gap: 0.3125rem;
-/* typography */
+align-items: center;
 color: var(--Brand-Brown, #522926);
 font-feature-settings: 'liga' off, 'clig' off;
+}
+.navigation-link a::before,
+.navigation-link a::after {
+    content: url('https://res.cloudinary.com/pmpartner/image/upload/nav-left-bracket.svg');
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    /* font-size: 1.5em; Adjust font size here */
+    line-height: 1; /* Reset line-height to avoid extra spacing */
+    vertical-align: middle; /* Align vertically */
+}
 
+.navigation-link a::after {
+    content: url('https://res.cloudinary.com/pmpartner/image/upload/nav-right-bracket.svg');
+    left: 100%;
+}
+
+.navigation-link a::before {
+    right: 100%;
+}
+
+.navigation-link a:hover::before,
+.navigation-link a:hover::after {
+    opacity: 1;
 }
 #getintouch{
   grid-column-start: 16;
@@ -862,7 +886,15 @@ font-style: normal;
 font-weight: 500;
 line-height: 1.875rem; /* 136.364% */
 }
-
+.herocard img.hero-down{
+  display: block;
+  margin-inline: auto;
+margin-top:2rem;
+transition: transform 0.3s ease;
+}
+.herocard img.hero-down:hover{
+  transform: translateY(1rem);
+}
 .text-image{
   overflow: auto;
   display: grid;
@@ -887,6 +919,7 @@ flex-shrink: 0;
 
 .text-image-right-img img, .text-image-left-img img{
   object-fit: cover;
+  height: 600px;
 }
 .text-image-card{
   xbackground-color: white;
@@ -1311,7 +1344,8 @@ background: var(--Brand-Orange, #FC7D57);
        justify-content: space-evenly;
       }
       & .reasons {
-        padding-left: 2rem;
+        margin-inline: auto;
+        padding-top:1.2rem;
       & li{
         font-size: 1.375rem;
         padding:  0.625;
