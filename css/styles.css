@@ -511,10 +511,12 @@ font-size: 0.75rem;
   xdisplay: grid;
   grid-template-columns: 1.25rem 23.4375rem 1.25rem;
   grid-template-rows: auto auto auto auto auto auto auto auto auto;
+
   grid-auto-columns: 1fr;
   grid-auto-rows: 1fr;
   gap: 0px 0px;
   grid-auto-flow: row;
+  /*
   grid-template-areas:
     "header header header"
     "hero hero hero"
@@ -525,6 +527,7 @@ font-size: 0.75rem;
     "case-studies case-studies case-studies"
     ". CTA ."
     ". footer .";
+ */
     margin: 0 auto;
 }
 /*.holder *{margin-inline: auto;}*/
@@ -561,32 +564,20 @@ font-size: 0.75rem;
   
 }
 
-/*.container *:after {
-  content:attr(class);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: grid;
-  align-items: center;
-  justify-content: center;
-}*/
 
 
 /* 
 ====================== 
  MOBILE FIRST LAYOUTS
 ====================== 
-
-
+*/
   .main {
     max-width: 23.43.75rem; 
     margin: 0 auto;
   }
-  */
   .container {
     grid-template-columns: 1.25rem auto 1.25rem;
+    grid-template-rows: repeat(9 auto);
     margin: 0 auto; /* Add this to center the container */
   }
   
@@ -695,13 +686,42 @@ grid-column-end: -1;
 }
 
 .herocard{
-xz-index: 98;
 grid-row-start: 2;
-grid-row-end: 3;
+grid-row-end: 4;
 grid-column-start: 2;
 background-color: white;
 padding: 1.125rem;
 }
+.herocard img.hero-down{
+  display: block;
+  margin-inline: auto;
+margin-top:2rem;
+transition: transform 0.3s ease;
+}
+.herocard img.hero-down:hover{
+  transform: translateY(1rem);
+}
+
+.text-image{
+  overflow: auto;
+  display: grid;
+  grid-template-columns: 1.25rem auto 1.25rem;
+  grid-template-rows: auto 3.8125rem auto;
+}
+.text-image-right-img, .text-image-left-img {
+  grid-row: 1 / span 2;
+  grid-column: 1 / span 3;
+  overflow: hidden;
+}
+.text-image-card {
+  grid-row: 2 / span 2;
+  grid-column: 2 / span 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: white;
+}
+
 
 /* 
 ================ 
@@ -739,6 +759,7 @@ padding: 1.125rem;
   margin: 0 auto;
 }
 .container {
+  display: block;
   grid-template-columns: 10.3125rem 69.375rem 10.3125rem;
   margin: 0 auto; /* Add this to center the container */
 }
@@ -899,15 +920,7 @@ font-style: normal;
 font-weight: 500;
 line-height: 1.875rem; /* 136.364% */
 }
-.herocard img.hero-down{
-  display: block;
-  margin-inline: auto;
-margin-top:2rem;
-transition: transform 0.3s ease;
-}
-.herocard img.hero-down:hover{
-  transform: translateY(1rem);
-}
+
 .text-image{
   overflow: auto;
   display: grid;
@@ -939,15 +952,11 @@ z-index: 1000000;
 }
 
 .text-image-card{
-  xbackground-color: white;
-  xpadding: 3rem 3rem;
   grid-row: 3 / span 10;
-  xwidth: 45.625rem;
-  xheight: 30.8125rem;
   display: flex;
   flex-direction: column;
-  justify-content: center
-
+  justify-content: center;
+  background: none;
  }
 
 .text-image-card.right{
