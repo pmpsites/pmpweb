@@ -579,7 +579,7 @@ font-size: 0.75rem;
   }
   .container {
     grid-template-columns: 1.25rem auto 1.25rem;
-    grid-template-rows: repeat(9 auto);
+    xbgone-grid-template-rows: repeat(9 auto);
     margin: 0 auto; /* Add this to center the container */
   }
   
@@ -739,7 +739,7 @@ transition: transform 0.3s ease;
    }
 }
 
-.process-section .intro{
+.process-section .intro, .case-studies-section .intro{
   grid-row: 1 / span 1;
   grid-column: 2 / span 1;
 
@@ -782,6 +782,80 @@ transition: transform 0.3s ease;
     }
   }
 }
+.case-studies-section{
+ background-color: var(--Brand-Green);
+}
+
+.case-studies-section .intro{
+  grid-row: 1 / span 1;
+  grid-column: 2 / span 1;
+}
+
+.case-studies-section .content{
+  grid-row: 4 / span 1;
+  grid-column: 2 / span 1;
+  margin-inline: auto;
+  xbgone-padding: 2rem;
+  & .cards{
+    display: flex;
+    margin-top: 1rem;
+    flex-direction: column;
+    & .link{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.3125rem;
+      color: var(--Neutrals-900, #2D4149);
+      font-size: 0.875rem;
+      font-weight: 700;
+      line-height: 1.375rem;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+   
+    & .card{
+      display: flex;
+      flex-direction: column;      
+      height: fit-content;
+      position: relative;
+      color: var(--Neutrals-900);
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+      overflow: hidden;
+      & img{
+        display:block;
+      }
+      & .card-content{
+        padding: 1rem;
+        & h4{
+          color: var(--Neutrals-900);
+          padding-block: 0.875rem;
+        }
+        & p {
+          padding-bottom: 0.875rem;
+      }
+
+      }
+    }
+  }
+}
+
+.solutiontext {display: none;z-index:0;} 
+.toggle-checkbox {display: none;}
+.toggle-checkbox:checked + .card-content .solutiontext {
+ display: block;
+ position: absolute;
+ bottom: 10%;
+ width: 90%;
+ height: fit-content;
+ background: var(--Brand-Grey-Light);
+ padding: 1rem;
+}
+.toggle-checkbox:checked + .card-content .arrow img{
+  content: url('/images/close.svg')
+}
+
+
 .imgwrap{
   width: max-content;
   height: 400px;
@@ -1377,9 +1451,10 @@ background: var(--Brand-Orange, #FC7D57);
   overflow: auto;
   display: grid;
   grid-template-columns: repeat(24, 3.75rem);
-  grid-template-rows: repeat(18, 3.75rem);
+  grid-template-rows: repeat(15, 3.75rem);
   width: 90rem;
-  min-height: 54rem;
+  height: fit-content;
+  margin-bottom: 6rem;
 
 }
 .case-studies{
@@ -1411,7 +1486,8 @@ background: var(--Brand-Orange, #FC7D57);
     grid-row: 5 / span 10;
     grid-column: 4 / span 18;
     margin-bottom: 1.875rem;
-    xborder: 3px solid var(--Brand-Yellow);
+    padding: unset;
+    
   & .btnCTA{
       display:block;
       margin-inline: auto;
@@ -1419,20 +1495,16 @@ background: var(--Brand-Orange, #FC7D57);
     }
   & .cards{
     display: flex;
+    flex-direction: row;
     margin-top: 1rem;
     gap: 1.875rem;
-    & h4{
-      font-size:1.375rem;
-      line-height: 1.875rem;
-      color: var(--Neutrals-900);
-      margin-top: 1.875rem;
-      margin-bottom: 0.9375rem
-    }
+
     & .card{
       display:flex;
       flex-direction: column;
       justify-content: space-between;
       width: 100%;
+      height: fit-content;
       position: relative;
       color: var(--Neutrals-900);
       font-size: 0.875rem;
@@ -1443,6 +1515,12 @@ background: var(--Brand-Orange, #FC7D57);
         flex-direction:column;
         justify-content: space-between;
         padding: 1.875rem;
+        & h4{
+          font-size:1.375rem;
+          line-height: 1.875rem;
+          color: var(--Neutrals-900);
+          margin-top: 1.875rem;
+        }
         & p{
           padding-bottom: 0.875rem;
         }
@@ -1478,9 +1556,9 @@ background: var(--Brand-Orange, #FC7D57);
     display: block;
     position: absolute;
     bottom: 12%;
-    width: 85%;
+    width: 82.5%;
     height: fit-content;
-    background: var(--Brand-Green);
+    background: var(--Brand-Grey-Light);
     padding-block: 1rem;
   }
   .toggle-checkbox:checked + .card-content .arrow img{
