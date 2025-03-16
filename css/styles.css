@@ -609,7 +609,7 @@ nav .pagelinks{
   left: 0;
   top: 5.625rem;
   color:white;
-  z-index: 999;
+  z-index: 10000;
   padding: 1.5625rem 1.25rem 1.5rem 1.25rem;
   justify-content: center;
   align-items: flex-start;
@@ -1232,21 +1232,42 @@ flex-shrink: 0;
   grid-row: 3 /span 10;
   grid-column: 7 / span 15;
   overflow: hidden;
+  position: relative;
 }
 
 .text-image-left-img{
   grid-row: 3 / span 10;
   grid-column: 4 / span 15;
   overflow: hidden;
+  position: relative;
 }
 
 .text-image-right-img img, .text-image-left-img img{
   object-fit: cover;
   height: 600px;
-}
-.text-image-right-img img:hover, .text-image-left-img img:hover{
-z-index: 1000000;
-}
+  
+  }
+  .show-image{
+    position:absolute;
+    width: 44px; 
+    height: 44px!important;
+    padding: 20px;
+    bottom: 1rem;
+    cursor:pointer;
+    z-index: 1;    
+  }
+  .text-image-right-img .show-image{   
+    right: 1rem;
+  }
+  .text-image-left-img .show-image{   
+    left: 1rem;
+  }
+  .show-image:hover + img{
+    z-index: 9999;
+  }
+  
+
+
 
 .text-image-card{
   grid-row: 3 / span 10;
@@ -1660,9 +1681,7 @@ background: var(--Brand-Orange, #FC7D57);
         }
       }
 
-     }
-    }
-  
+
 
 
 
