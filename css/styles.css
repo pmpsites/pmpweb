@@ -688,7 +688,7 @@ grid-column-end: -1;
 .heroimg img{
   object-fit:cover;
   xxxdisplay:inline-block;
-  
+  min-width: 1440px;
 }
 
 .herocard{
