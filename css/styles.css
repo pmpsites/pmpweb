@@ -1109,7 +1109,14 @@ img.a {
   object-fit: cover;
   transition: transform 200ms ease-in-out;
 }
+.case-studies-section .content {
+  & .cards {
+      display: flex;
+      margin-top: 1rem;
+      flex-direction: row;
   }
+}
+} /* END MEDIA QUERY TABLET */
   
 /* 
 ================= 
