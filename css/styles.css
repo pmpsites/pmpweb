@@ -1704,8 +1704,9 @@ background: var(--Brand-Orange, #FC7D57);
     padding-block: 1rem;
   }
   .toggle-checkbox:checked + .card-content .arrow img{
-    content: url('/images/close.svg')
+    content: url('/images/close.svg');
   }
+
 
   .cta-section{
     grid-template-rows: repeat(9, 3.75rem);
