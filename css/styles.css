@@ -1386,7 +1386,7 @@ background-color: var(--Brand-Grey);
 }
 .about .text-image{
   background-color: var(--Brand-Grey);
-  height: fit-content;
+  xheight: fit-content;
 }
 .about .cta-section{
   margin-block:unset;
