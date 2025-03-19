@@ -105,6 +105,9 @@
     font-weight: normal;
     text-rendering: optimizeLegibility;
 }
+@view-transition{
+  navigation: auto;
+}
 :root{
 --font-family: "Sinteca"; /* , system-ui */
 
@@ -561,7 +564,7 @@ font-size: 0.75rem;
 
 /*.process-section { grid-area: process; min-height: 50rem; }*/
 
-/*.case-studies-section { grid-area: case-studies; min-height: 54rem}
+/*.three-cards { grid-area: case-studies; min-height: 54rem}
 
 .CTA { grid-area: CTA; }
 
@@ -804,11 +807,11 @@ transition: transform 0.3s ease;
     }
   }
 }
-.case-studies-section{
+.three-cards{
  background-color: var(--Brand-Green);
 }
 
-.case-studies-section .intro{
+.three-cards .intro{
   grid-row: 1 / span 1;
   grid-column: 2 / span 1;
   text-align: center;
@@ -821,7 +824,7 @@ transition: transform 0.3s ease;
   }
 }
 
-.case-studies-section .content{
+.three-cards .content{
   grid-row: 2 / span 2;
   grid-column: 2 / span 1;
   margin-inline: auto;
@@ -915,6 +918,7 @@ transition: transform 0.3s ease;
   grid-row: 1 / span 2;
   grid-column: 1 / span 3;
   background-color: var(--Brand-Brown);
+  border-top: 0.25rem solid var(--Brand-Orange);
   
   & .content {
     padding-bottom: 2rem;
@@ -1140,7 +1144,7 @@ img.a {
   object-fit: cover;
   transition: transform 200ms ease-in-out;
 }
-.case-studies-section .content {
+.three-cards .content {
   & .cards {
       display: flex;
       margin-top: 1rem;
@@ -1334,19 +1338,21 @@ background-color: var(--Brand-Grey);
   grid-column: 1 / span 24;
 }
 .in-herocard{
-  background-color: var(--Brand-Blue);
+  
   grid-row: 7 / span 4;
   grid-column: 5 / span 16;
   padding: 3.75rem;
   display: flex;
   flex-direction: row;
-  color: white;
+  
+  align-items: center;
+  justify-content: center;
   & h2{
     color: white;
     font-size: 2.875rem;
     font-weight: 700;
     display: inline-block;
-    min-width: 30rem;
+    margin-right:2rem;
     line-height:3.375rem;
   }
   p{
@@ -1356,6 +1362,35 @@ background-color: var(--Brand-Grey);
     font-weight:400;
   }
 }
+.about .in-herocard{
+  background-color: var(--Brand-Blue);
+  color: white;
+  & h2{
+    color: white;
+  }
+}
+.insights .in-herocard{
+  background-color: var(--Brand-Green);
+  color: var(--Neutrals-900);
+  & h2{
+    color: var(--Brand-Brown);
+  }
+}
+.insights .container{
+  background-color: var(--Brand-Grey);
+  & .header{
+    background-color: white;
+  }
+}
+
+.insights .three-cards{
+  grid-template-rows: repeat(13, 3.75rem);
+  background-color: var(--Brand-Grey);
+ & .content{
+  grid-row: 2/span 10;
+ }
+}
+
 .drawer{
   background-color: var(--Brand-Grey);
   padding: 0.9375rem;
@@ -1392,7 +1427,75 @@ background-color: var(--Brand-Grey);
   margin-block:unset;
   padding-block: 2.5rem;
 }
+.article-hero{
+  background-color: var(--Brand-Green);
+  & .in-herocard{
+    grid-row: 1 /span 1;
+    grid-column: 3 / span 9;
+    border: 1px solid var(--Brand-Yellow);
+    padding-block: 2rem;
+    display:flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    & .link{
 
+    }
+    & .article-categories{
+      display: flex;
+      flex-direction: row;
+    }
+  }
+  & .in-heroimg{
+    grid-row: 1 /span 1;
+    grid-column: 13 / span 9;
+    padding-block: 2rem;
+
+  }
+}
+.article .text-image{
+  grid-template-rows: 1fr;
+  height: fit-content;
+}
+article{
+  grid-column: 7 / span 12;
+}
+.pull-quote {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: 2rem auto 2rem;
+  align-items: stretch;
+  padding: 20px;
+}
+
+.pull-quote__bracket-left,
+.pull-quote__bracket-right {
+  width: 40px; /* Adjust width of the bracket area */
+  display: flex; /* Use flexbox to control image height */
+  align-items: stretch; /* Make the flex item (img) stretch */
+}
+.pull-quote__bracket-left {grid-row: 1 /span 3;}
+.pull-quote__bracket-right {grid-row: 1 /span 3;}
+.pull-quote__bracket-left img,
+.pull-quote__bracket-right img {
+  
+  display: block;
+  width: auto; /* Maintain aspect ratio */
+  height: 100%; /* Make the image take up the full height of the flex container */
+}
+
+.pull-quote__text {
+  grid-row: 2 /span 1;
+font-size: 1.125rem;
+font-style: italic;
+font-weight: 900;
+line-height: 1.625rem;
+  color: var(--Brand-Brown);
+  margin: 0;
+  margin-inline: 2rem;
+  padding: 10px 20px;
+  xheight: 80%;
+}
 .heroheading{
   text-align:center;
   
@@ -1683,7 +1786,7 @@ gap: 0.625rem;
 background: var(--Brand-Orange, #FC7D57);
 }
 /* case studies section */
-.case-studies-section{
+.three-cards{
   overflow: auto;
   display: grid;
   grid-template-columns: repeat(24, 3.75rem);
@@ -1701,7 +1804,7 @@ background: var(--Brand-Orange, #FC7D57);
 
 
   
-.case-studies-section .intro{
+.three-cards .intro{
   grid-row: 2 / span 2;
   grid-column: 8 / span 10;
   margin-bottom: 1.875rem;
@@ -1718,7 +1821,7 @@ background: var(--Brand-Orange, #FC7D57);
     text-align: center;
   }
 }
-  .case-studies-section .content{
+  .three-cards .content{
     grid-row: 5 / span 10;
     grid-column: 4 / span 18;
     margin-bottom: 1.875rem;
@@ -1786,16 +1889,17 @@ background: var(--Brand-Orange, #FC7D57);
   }
   }
 /* hide and display the case study solution */
-   .solutiontext {display: none;z-index:0;} 
+   .solutiontext {max-height: 0;xdisplay: none;z-index:0;transition: max-height 0.3s ease-in-out;} 
    .toggle-checkbox {display: none;}
    .toggle-checkbox:checked + .card-content .solutiontext {
-    display: block;
+    xdisplay: block;
     position: absolute;
     bottom: 12%;
     width: 82.5%;
-    height: fit-content;
+    xheight: fit-content;
     background: var(--Brand-Grey-Light);
     padding-block: 1rem;
+    max-height: fit-content;
   }
   .toggle-checkbox:checked + .card-content .arrow img{
     content: url('/images/close.svg');
@@ -1872,6 +1976,9 @@ background: var(--Brand-Orange, #FC7D57);
         & .intro{
           grid-row: 5 / span 1;
           margin-inline: auto;
+          & img{
+            padding-block: 0rem 2rem;
+          }
         }
         & .links{
           display:flex;
@@ -1905,294 +2012,6 @@ background: var(--Brand-Orange, #FC7D57);
         }
       }
 
-
-
-
-
-
-.case-studies .copy{
-display: flex;
-height: 8.9375rem;
-flex-direction: column;
-align-items: center;
-gap: 0.9375rem;
-}
-
-.case-studies .copy h3{
-color: var(--Brand-Brown, #522926);
-text-align: center;
-font-feature-settings: 'liga' off, 'clig' off;
-
-/* Desktop/Titles/H3 */
-font-family: var(--font-family);
-font-size: 2rem;
-font-style: normal;
-font-weight: 700;
-line-height: 2.5rem; /* 125% */
-}
-
-.case-studies .copy .text{
-color: var(--Neutrals-900, #2D4149);
-text-align: center;
-font-feature-settings: 'liga' off, 'clig' off;
-
-/* Desktop/Body/Regular/2 */
-font-family: var(--font-family);
-font-size: 1rem;
-font-style: normal;
-font-weight: 400;
-line-height: 1.5rem; /* 150% */
-
-width: 33.75rem;
-}
-
-.case-studies .grid{
-display: flex;
-justify-content: center;
-align-items: flex-start;
-gap: 1.875rem;
-}
-
-.case-study-card{
-display: flex;
-width: 21.875rem;
-padding-top: 1.875rem;
-flex-direction: column;
-align-items: center;
-}
-
-.case-study-card img{
-width: 18.125rem;
-height: 18.125rem;
-}
-
-.case-study-card .copy{
-display: flex;
-padding: 1.875rem;
-flex-direction: column;
-align-items: flex-start;
-gap: 1.875rem;
-align-self: stretch;
-}
-
-.case-study-card .copy .challenge{
-display: flex;
-padding: 1.875rem;
-flex-direction: column;
-align-items: flex-start;
-gap: 1.875rem;
-align-self: stretch;
-}
-
-.case-study-card .copy .challenge h4{
-color: var(--Brand-Brown, #522926);
-font-feature-settings: 'liga' off, 'clig' off;
-
-/* Desktop/Titles/H4 */
-font-family: var(--font-family);
-font-size: 1.375rem;
-font-style: normal;
-font-weight: 700;
-line-height: 1.875rem; /* 136.364% */
-
-width: 18.125rem;
-}
-.case-study-card .copy .challenge .text{
-color: var(--Neutrals-900, #2D4149);
-font-feature-settings: 'liga' off, 'clig' off;
-
-/* Desktop/Body/Regular/3 */
-font-family: var(--font-family);
-font-size: 0.875rem;
-font-style: normal;
-font-weight: 400;
-line-height: 1.375rem; /* 157.143% */
-width: 18.125rem;
-}
-
-.case-study-card .copy .solution{
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-gap: 0.9375rem;
-}
-
-.case-study-card .copy .solution .link{
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 0.3125rem;
-}
-
-.case-study-card .copy .solution .link .copy{
-display: flex;
-padding-top: 0.25rem;
-justify-content: center;
-align-items: center;
-gap: 0.625rem;
-}
-.case-study-card .copy .solution .link .copy .text{
-color: var(--Neutrals-900, #2D4149);
-font-feature-settings: 'liga' off, 'clig' off;
-
-/* Desktop/Body/Bold/3 */
-font-family: var(--font-family);
-font-size: 0.875rem;
-font-style: normal;
-font-weight: 700;
-line-height: 1.375rem; /* 157.143% */
-}
-.case-study-card .copy .solution .link .arrows{
-display: flex;
-width: 1.5rem;
-height: 1.5rem;
-transform: rotate(90deg);
-justify-content: center;
-align-items: center;
-}
-
-.case-study-card .copy .solution .link .arrows .arrow{
-width: 1.5rem;
-height: 1.5rem;
-flex-shrink: 0;
-content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cg clip-path='url(%23clip0_6221_4869)'%3E%3Cpath d='M20 12L18.59 10.59L13 16.17V4H11V16.17L5.41 10.59L4 12L12 20L20 12Z' fill='%232D4149'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_6221_4869'%3E%3Crect width='24' height='24' fill='white' transform='matrix(0 1 -1 0 24 0)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
-}
-/*
-opening the case study card drawer
-
-Animate Ease out
-Duration 300ms
-*/
-
-.bottom{
-display: flex;
-width: 90rem;
-flex-direction: column;
-align-items: center;
-gap: 3.75rem;
-}
-
-.CTA{
-display: flex;
-padding: 3.75rem 5.875rem;
-align-items: center;
-gap: 7.875rem;
-
-background: var(--Brand-Brown, #522926);
-}
-.CTA .title{
-display: flex;
-width: 27.75rem;
-flex-direction: column;
-align-items: flex-start;
-gap: 0.9375rem;
-}
-.CTA .title .heading{
-color: #FFF;
-font-feature-settings: 'liga' off, 'clig' off;
-
-/* Desktop/Titles/H2 */
-font-family: var(--font-family);
-font-size: 2.875rem;
-font-style: normal;
-font-weight: 700;
-line-height: 3.375rem; /* 117.391% */
-}
-.CTA .title .heading .highlight{
-color: var(--Brand-Orange, #FC7D57);
-}
-.CTA .title .description{
-color: #FFF;
-text-align: center;
-font-feature-settings: 'liga' off, 'clig' off;
-
-/* Desktop/Body/Bold/2 */
-font-family: var(--font-family);
-font-size: 1rem;
-font-style: normal;
-font-weight: 700;
-line-height: 1.5rem; /* 150% */
-}
-.CTA .cta{
-display: flex;
-width: 21.875rem;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-gap: 1.875rem;
-}
-.CTA .cta button{
-display: flex;
-width: 21.875rem;
-padding: 0.9375rem 1.25rem 0.75rem 1.25rem;
-justify-content: center;
-align-items: center;
-gap: 0.625rem;
-background: var(--Brand-Orange, #FC7D57);
-}
-
-.CTA .cta .bullets{
-display: flex;
-width: 21.8125rem;
-flex-direction: column;
-align-items: center;
-gap: 0.625rem;
-}
-.CTA .cta .bullets .bullet{
-display: flex;
-align-items: flex-start;
-gap: 0.625rem;
-}
-.CTA .cta .bullets .bullet .action{
-display: flex;
-width: 1.5rem;
-height: 1.5rem;
-justify-content: center;
-align-items: center;
-content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='25' viewBox='0 0 24 25' fill='none'%3E%3Cg clip-path='url(%23clip0_6221_4770)'%3E%3Cpath d='M9.00039 16.7001L4.80039 12.5001L3.40039 13.9001L9.00039 19.5001L21.0004 7.5001L19.6004 6.1001L9.00039 16.7001Z' fill='%2396CF8C'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_6221_4770'%3E%3Crect width='24' height='24' fill='white' transform='translate(0 0.5)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
-}
-.CTA .cta .bullets .bullet .text{
-color: #FFF;
-font-feature-settings: 'liga' off, 'clig' off;
-
-/* Desktop/Body/Regular/3 */
-font-family: var(--font-family);
-font-size: 0.875rem;
-font-style: normal;
-font-weight: 400;
-line-height: 1.375rem; /* 157.143% */
-}
-.NO-footer{
-display: flex;
-padding: 2.3125rem 5rem;
-flex-direction: column;
-align-items: center;
-gap: 3.75rem;
-align-self: stretch;
-
-border-top: 2px solid var(--Brand-Orange, #FC7D57);
-background: var(--Brand-Brown, #522926);
-}
-.footer .logo{
-width: 11.25rem;
-height: 4.90619rem;
-aspect-ratio: 180.00/78.50;
-}
-.footer .copy{
-display: flex;
-justify-content: center;
-align-items: flex-end;
-gap: 7.5rem;
-}
-.footer .copy .policy{
-/* These are links. Hover - Underline in orange and show arrow */
-display: flex;
-align-items: flex-start;
-gap: 1.875rem;
-}
-.footer .copy{
-
-}
 
 
 
