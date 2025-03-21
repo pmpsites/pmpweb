@@ -269,6 +269,7 @@ textarea:not([rows]) {
 */
 
 body{
+  min-height: 100vh;
 font-family: var(--font-family);
 font-feature-settings: 'liga' off, 'clig' off;
 font-style: normal;
@@ -1489,15 +1490,19 @@ article-footer{
 .contact-form{
   background-color: var(--Brand-Grey);
   height: unset;
+  xheight: 100vh;
+  
 }
 .form-wrapper{
   grid-column: 7 / span 12;
   grid-row: 1 / span 12;
   background-color: white;
+  
 }
 .form-holder{
     grid-column: 9 / span 8;
     grid-row: 2 / span 12;
+    
    & form{
     display: flex;
     flex-direction: column;
@@ -1510,6 +1515,16 @@ article-footer{
     background: linear-gradient(0deg, rgba(252, 125, 87, 0.20) 0%, rgba(252, 125, 87, 0.20) 100%);
     border: none;
     padding: 0.9375rem;
+   }
+   & input:not([type="submit"]):hover, textarea:hover{
+    border: 0.31rem solid var(--Brand-Orange);
+   }
+   & input:not([type="submit"]):focus, textarea:focus{
+    border: 0.31rem solid var(--Neutrals-900);
+   }
+   & input[type="email"]:invalid{
+    border: unset;
+    border: 0.51rem solid red;
    }
    & input[type=submit]{
     padding: 0.9375rem 1.25rem 0.75rem 1.25rem;
