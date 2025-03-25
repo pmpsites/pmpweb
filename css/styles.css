@@ -832,7 +832,7 @@ border-top: 0.25rem solid var(--Brand-Orange);
     flex-direction: row;
     justify-content: center;
     & img{
-      padding-inline: 1rem;
+      padding-inline: 0.3rem;
     }
   }
   & .policies{
@@ -2357,7 +2357,8 @@ margin-bottom: 1.875rem;
         & .social{
           display:flex;
           flex-direction: row;
-          column-gap: 1rem;
+          column-gap: 0.5rem;
+          padding-left: 1.3rem;
         }
         & .copyright{
           display:flex;
