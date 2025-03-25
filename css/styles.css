@@ -945,18 +945,17 @@ position: relative
 }
 }
 .about .drawer{
-
   background-color: var(--Brand-Grey);
   padding: 0.9375rem;
   margin-block: 0.9375rem;
   overflow: hidden;
   max-height: 5.625rem;
   transition: max-height 0.3s ease-in-out;
-
   & .link{
     display: flex;
     flex-direction: row;
     align-items: center;
+    cursor: pointer;
   & .arrow{
     padding: 1.5rem 1.5rem 1.5rem 0;
   }
@@ -1056,7 +1055,8 @@ position: relative
 }
 .article-hero{ 
   background-color: var(--Brand-Green);
-  grid-template-rows: repeat(8, 3.75rem);
+  grid-template-rows: repeat(2, auto);
+ 
   & .in-herocard{
     grid-row: 6 / span 1;
     grid-column: 2 / span 1;
@@ -1065,6 +1065,7 @@ position: relative
     align-items: stretch;
     justify-content: space-between;
     z-index: 12;
+    padding-block: 1.875rem;
 
   & .link{
     display: flex;
@@ -1111,6 +1112,7 @@ position: relative
     background: linear-gradient(0deg, rgba(150, 207, 140, 0.40) 0%, rgba(150, 207, 140, 0.40) 100%), #FFF;
     margin-right: 0.94rem;
     padding: 0.3125rem 0.3125rem 0.0875rem 0.3125rem;
+    text-decoration: none;
    }
    & .tag:hover{
     cursor: pointer;
@@ -1163,7 +1165,7 @@ article .pull-quote{
      color: var(--Brand-Brown);
      margin: 0;
      x-margin-inline: 2rem;
-     padding: 10px 15px; 
+     padding: 15px 5px; 
   }
   & .pull-quote__bracket-right{
      grid-row: 1 / span 3;
@@ -1351,12 +1353,12 @@ transition: transform 200ms ease-in-out;
     flex-direction: row;
 }
 }
-.article-hero{
+/*.article-hero{
 grid-template-rows: repeat(10, 3.75rem);
 & .in-herocard{
   grid-row: 8 / span 1;
 }
-}
+}*/
 .article .in-heroimg img{
 content: url('https://res.cloudinary.com/pmpartner/image/upload/c_fill,w_768,h_385/gatecrasher');
 }
@@ -1699,6 +1701,7 @@ background-color: var(--Brand-Grey);
     margin-right: 0.94rem;
     padding: 0.3125rem 0.3125rem 0.0875rem 0.3125rem;
     text-decoration: none;
+    border: 2px solid rgba(150, 207, 140, 0.40);
    }
    & .tag:hover{
     cursor: pointer;
@@ -1754,17 +1757,14 @@ color: white;
 flex-direction: row;
 
 }
-*/
+
 
 .insights .container{
 background-color: var(--Brand-Grey);
-& .header{
-  background-color: white;
-}
 }
 
 .insights .three-cards{
-grid-template-rows: repeat(13, 3.75rem);
+grid-template-rows: repeat(12, 3.75rem);
 background-color: var(--Brand-Grey);
 & .content{
 grid-row: 2/span 10;
@@ -2141,7 +2141,7 @@ grid-template-columns: repeat(24, 3.75rem);
 grid-template-rows: repeat(15, 3.75rem);
 width: var(--grid-desktop-max);
 height: fit-content;
-margin-bottom: 6rem;
+xmargin-bottom: 6rem;
 
 }
 .case-studies{
@@ -2264,7 +2264,7 @@ margin-bottom: 1.875rem;
 .cta-section{
   grid-template-rows: repeat(7, 3.75rem);
   height: fit-content;
-  background-color: var(--BrandGrey);
+  
   
   & .ctabg{
     grid-row:  1 / span 7;
@@ -2310,6 +2310,9 @@ margin-bottom: 1.875rem;
       }
     }
    }
+   .about .cta-section, .insights .cta-section, .article .cta-section{
+   background-color: var(--Brand-Grey);
+  }
    .footer-section{
     overflow: auto;
       display: grid;
