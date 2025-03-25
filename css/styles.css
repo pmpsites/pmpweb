@@ -832,7 +832,7 @@ border-top: 0.25rem solid var(--Brand-Orange);
     flex-direction: row;
     justify-content: center;
     & img{
-      padding-inline: 0.3rem;
+      padding-inline: 0.8rem;
     }
   }
   & .policies{
