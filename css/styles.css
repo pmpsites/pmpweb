@@ -1128,6 +1128,7 @@ transition: transform 0.3s ease;
 article{
     grid-column: 2 /span 1;
     grid-row: 1 / span 3;
+    padding-top: 1.875rem;
 }
 article .pull-quote{
     display: grid;
