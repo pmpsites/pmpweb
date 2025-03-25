@@ -1127,7 +1127,7 @@ transition: transform 0.3s ease;
 }
 article{
     grid-column: 2 /span 1;
-    margin-block: 1.875rem;
+    grid-row: 1 / span 3;
 }
 article .pull-quote{
     display: grid;
@@ -1192,12 +1192,13 @@ article h3, .pull-quote, article-footer {
 }
 
 article-footer{
-  grid-row: 4 / span 1;
-  grid-column: 2 span 1;
+  grid-row: 25 / span 1;
+  grid-column: 1 / span 3;
   display: block;
   padding: 1.88rem;
   background-color: var(--Brand-Green);
   min-height:7.6875rem;
+
   & h4{
     font-size: 1rem;
     font-style: normal;
@@ -1391,6 +1392,7 @@ width: var(--grid-desktop-max);
 padding: 1.25rem var(--grid-desktop-gutter);
 justify-content: space-between;
 align-items: center;
+background-color: white;
 }
 .logo{
 width: 11.25rem;
@@ -1615,6 +1617,14 @@ background-color: var(--Brand-Grey);
     color: var(--Brand-Brown);
   }
 }
+article{
+  background-color: white;
+  padding-inline: 1.875rem;
+  xpadding-block: 2.8125rem;
+}
+.article{
+  background-color: var(--Brand-Grey);
+}
   .article-hero{ 
     background-color: var(--Brand-Green);
     grid-template-rows: repeat(8, 3.75rem);
@@ -1686,6 +1696,7 @@ background-color: var(--Brand-Grey);
   }
 }
 article-footer{
+  grid-column: 7 / span 12;
   display: block;
   padding: 1.88rem;
   background-color: var(--Brand-Green);
@@ -1757,11 +1768,12 @@ article-footer{
 }
 article{
   grid-column: 7 / span 12;
-  grid-row: 2 / span 12;
+  grid-row: 1 / span 24;
+  margin-bottom: -1.8125rem;
 }
 article .pull-quote{
   & .pull-quote__text{
-      padding: 10px 40px; 
+      padding: 10px 40px;
   }
 }
 .pull-quote {
@@ -2229,6 +2241,8 @@ background: var(--Brand-Orange, #FC7D57);
   .cta-section{
     grid-template-rows: repeat(7, 3.75rem);
     height: fit-content;
+    background-color: var(--BrandGrey);
+    
     & .ctabg{
       grid-row:  1 / span 7;
       grid-column: 4 / span 18;
