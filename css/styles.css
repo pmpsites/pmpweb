@@ -1134,7 +1134,7 @@ article .pull-quote{
     grid-template-columns: auto 1fr auto;
     grid-template-rows: 0.5rem auto 0.5rem;
     align-items: stretch;
-    padding: 20px;
+    xpadding: 20px;
     & .pull-quote__bracket-left {
         grid-row: 1 / span 3;
     }
