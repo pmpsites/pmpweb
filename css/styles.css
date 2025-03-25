@@ -830,7 +830,10 @@ transition: transform 0.3s ease;
       grid-column: 2/ span 1;
       display: flex;
       flex-direction: row;
-      justify-content: space-around;
+      justify-content: center;
+      & img{
+        padding-inline: 1rem;
+      }
     }
     & .policies{
       grid-row: 2 / span 1;
@@ -838,8 +841,11 @@ transition: transform 0.3s ease;
       display: flex;
       flex-direction: row;
       justify-content: space-around;
-
+      & a:hover{
+        text-decoration: underline 2px var(--Brand-Orange);
+      }
     }
+
     & .copyright{
       grid-row: 3 / span 1;
       grid-column: 2/ span 1;
@@ -850,7 +856,18 @@ transition: transform 0.3s ease;
 
   }
 
-
+  .ig-icon:hover{
+    content: url('/icons/ig-hover.svg')
+  }
+  .fb-icon:hover{
+    content: url('/icons/fb-hover.svg')
+  }
+  .x-icon:hover{
+    content: url('/icons/x-hover.svg')
+  }
+  .li-icon:hover{
+    content: url('/icons/li-hover.svg')
+  }
 
 .solutiontext {display: none;z-index:0;} 
 .toggle-checkbox {display: none;}
@@ -1115,7 +1132,7 @@ article{
 article .pull-quote{
     display: grid;
     grid-template-columns: auto 1fr auto;
-    grid-template-rows: 2rem auto 2rem;
+    grid-template-rows: 0.5rem auto 0.5rem;
     align-items: stretch;
     padding: 20px;
     & .pull-quote__bracket-left {
@@ -1126,6 +1143,16 @@ article .pull-quote{
         display: flex;
         align-items: stretch;
     }
+    & .pull-quote__bracket-left{
+      border-left: 0.7rem solid var(--Brand-Orange);
+      border-top: 0.7rem solid var(--Brand-Orange);
+      border-bottom: 0.7rem solid var(--Brand-Orange);
+    }
+    .pull-quote__bracket-right{
+      border-right: 0.7rem solid var(--Brand-Orange);
+      border-top: 0.7rem solid var(--Brand-Orange);
+      border-bottom: 0.7rem solid var(--Brand-Orange);
+    }
     & .pull-quote__text{
        grid-row: 2 / span 1;
        font-size: 1.125rem;
@@ -1134,8 +1161,8 @@ article .pull-quote{
        line-height: 1.625rem;
        color: var(--Brand-Brown);
        margin: 0;
-       margin-inline: 2rem;
-       padding: 10px 20px; 
+       x-margin-inline: 2rem;
+       padding: 10px 10px; 
     }
     & .pull-quote__bracket-right{
        grid-row: 1 / span 3;
