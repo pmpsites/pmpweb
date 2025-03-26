@@ -820,6 +820,7 @@ border-top: 0.25rem solid var(--Brand-Orange);
   display: grid;
   grid-template-rows: repeat(3, auto);
   grid-template-columns: repeat(3, auto);
+  margin-top: 1.375rem;
   
   & div{
     margin-top: 0.5rem;
@@ -2344,6 +2345,7 @@ margin-bottom: 1.875rem;
         color: white;
         justify-content: space-evenly;
         align-items: flex-end;
+        margin-top: -0.5rem;
          & a{
           text-decoration: none;
          }
