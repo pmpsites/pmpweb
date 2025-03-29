@@ -1790,9 +1790,9 @@ grid-template-rows: auto 3.8125rem auto;
     grid-template-rows: repeat(10, 3.75rem);
  
 }
-.about .cta-section{
+ .cta-section{
 margin-block:unset;
-padding-block: 2.5rem;
+padding-block: 4rem;
 }
 
 .article .text-image{
