@@ -887,7 +887,9 @@ display:block;
 opacity: 1;
 overflow: hidden; /* To prevent potential content overflow during transition */
 max-height: 12.675rem; /* Initially collapsed */
-padding-top: 0.875rem
+padding-top: 0.875rem;
+font-size: 0.875rem;
+line-height: 1.375rem;
 }
 
 .toggle-checkbox:checked + .card-content .arrow img, .toggle-checkbox:checked + .arrow img{
