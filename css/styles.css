@@ -1779,9 +1779,16 @@ grid-row: 2/span 10;
 font-size: 1rem;
 line-height: 1.5rem; 
 }
+
 .about .text-image{
 background-color: var(--Brand-Grey);
-xheight: fit-content;
+height: unset;
+grid-template-rows: auto 3.8125rem auto;
+}
+.about .text-image.in-hero{
+
+    grid-template-rows: repeat(10, 3.75rem);
+ 
 }
 .about .cta-section{
 margin-block:unset;
@@ -2315,6 +2322,7 @@ margin-bottom: 1.875rem;
    }
    .about .cta-section, .insights .cta-section, .article .cta-section{
    background-color: var(--Brand-Grey);
+   grid-template-rows: repeat(7, 3.75rem);
   }
    .footer-section{
     overflow: auto;
