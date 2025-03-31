@@ -1450,6 +1450,8 @@ gap: 0.3125rem;
 align-items: center;
 color: var(--Brand-Brown, #522926);
 font-feature-settings: 'liga' off, 'clig' off;
+font-size: 1rem;
+font-weight: 700;
 }
 .navigation-link a::before,
 .navigation-link a::after {
