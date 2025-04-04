@@ -30,7 +30,7 @@ navigation: auto;
 --Brand-Blue: hsl(208, 53%, 32%);
 --Brand-Brown: hsl(4, 37%, 24%);
 --Brand-Green: hsl(111, 41%, 68%);
---Brand-Green-Light: hsl(111, 41%, 95%);
+--Brand-Green: hsl(111, 41%, 95%);
 --Brand-Grey: hsl(197, 21%, 94%);
 --Brand-Grey-Light: hsl(200, 23%, 97%);
 --Brand-Orange: hsl(14, 96%, 66%);
@@ -643,7 +643,7 @@ padding: 1.25rem;
 }
 
 .process{
-background:radial-gradient(108.49% 108.49% at 50% 108.49%, #B85C55 0%, #522926 55%);
+background: var(--Brand-Light-Grey);/*radial-gradient(108.49% 108.49% at 50% 108.49%, #B85C55 0%, #522926 55%);*/
 grid-row: 1 / span 4;
 grid-column: 1/ span 3;
 }
@@ -697,7 +697,7 @@ no-padding: 1rem;
 }
 }
 .three-cards{
-background-color: var(--Brand-Green-Light);
+background-color: var(--Brand-Green);
 }
 
 .three-cards .intro{
@@ -956,7 +956,7 @@ position: relative
 .insights{
 & .in-hero{
 & .in-herocard{
-  background-color: var(--Brand-Green-Light);
+  background-color: var(--Brand-Green);
   color: var(--Neutrals-900);
   & h2{
     color: var(--Brand-Brown);
@@ -1284,7 +1284,7 @@ not-this-height: 680px;
 grid-row: 3 / span 2;
 grid-column: 3 / span 4;
  & .heading{
-  color: var(--Brand-Orange);
+  color: var(--Brand-Brown);
   xbgx-font-size: 2rem;
   text-align: center;
 }
@@ -2185,7 +2185,7 @@ xmargin-bottom: 6rem;
 
 }
 .case-studies{
-background: var(--Brand-Green-Light, #96CF8C);
+background: var(--Brand-Green, #96CF8C);
 grid-row: 1 / span 16;
 grid-column: 1 / span 24;
 }
