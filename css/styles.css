@@ -30,6 +30,7 @@ navigation: auto;
 --Brand-Blue: hsl(208, 53%, 32%);
 --Brand-Brown: hsl(4, 37%, 24%);
 --Brand-Green: hsl(111, 41%, 68%);
+--Brand-Green-Light: hsl(111, 41%, 95%);
 --Brand-Grey: hsl(197, 21%, 94%);
 --Brand-Grey-Light: hsl(200, 23%, 97%);
 --Brand-Orange: hsl(14, 96%, 66%);
@@ -357,7 +358,7 @@ width:fit-content;
 }
 
 .btnCTA {
-color: var(--Brand-Brown);
+color: white;/*var(--Brand-Brown);*/
 padding: 1.5rem;
 border: none;
 font-weight:700;
@@ -649,7 +650,7 @@ grid-column: 1/ span 3;
 .process-section .intro{
 grid-row: 1 / span 1;
 grid-column: 2 / span 1;
-color: white;
+xcolor: white;
 text-align: center;
 & h3{
   padding-top: 2.5rem;
@@ -696,7 +697,7 @@ no-padding: 1rem;
 }
 }
 .three-cards{
-background-color: var(--Brand-Green);
+background-color: var(--Brand-Green-Light);
 }
 
 .three-cards .intro{
@@ -882,16 +883,21 @@ border-top: 0.25rem solid var(--Brand-Orange);
   content: url('/icons/li-hover.svg')
 }
 
-.solutiontext {display: none;z-index:0;} 
-.toggle-checkbox {display: none;}
-.toggle-checkbox:checked + .card-content .solutiontext{
-display: block;
-position: absolute;
-bottom: 10%;
-width: 90%;
-height: fit-content;
-background: var(--Brand-Grey-Light);
-padding: 1rem;
+.card-content .solutiontext {
+  max-height: 0;
+  overflow: hidden; /* Important for hiding content when max-height is 0 */
+  opacity: 0;
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;/* Transition both max-height and opacity */
+  z-index: 0;
+ } 
+ .toggle-checkbox {display: none;}
+ .toggle-checkbox:checked + .card-content .solutiontext {
+  opacity: 1;
+  overflow: hidden; /* To prevent potential content overflow during transition */
+  max-height: 12.675rem; /* Initially collapsed */
+  padding-top: 0.875rem;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
 }
 
 .drawer .solutiontext{
@@ -918,7 +924,6 @@ max-height: 200px; /* Or a value large enough to accommodate the content */
 .toggle-checkbox:checked + .drawer .arrow img, .toggle-checkbox:checked + .arrow img{
 content: url('/images/close.svg')
 }
-
 
 .imgwrap{
 width: max-content;
@@ -951,7 +956,7 @@ position: relative
 .insights{
 & .in-hero{
 & .in-herocard{
-  background-color: var(--Brand-Green);
+  background-color: var(--Brand-Green-Light);
   color: var(--Neutrals-900);
   & h2{
     color: var(--Brand-Brown);
@@ -1284,7 +1289,7 @@ grid-column: 3 / span 4;
   text-align: center;
 }
 & p{
-  color: white;
+  xcolor: white;
   font-size: 1.125rem;
   line-height: 1.5rem;
   text-align: center;
@@ -1343,17 +1348,17 @@ background: none;
 }
 
 .first{
-object-position: calc(-1 * ((var(--largestsideofimg) / var(--cutimageinto))) * 0) 0;
-content: var(--horizontalbg);  
-}
-.second{
-object-position: calc(-1 * ((var(--largestsideofimg) / var(--cutimageinto))) * 1) 30%;
-content: var(--horizontalbg); 
-}
-.third{
-object-position: calc(-1 * ((var(--largestsideofimg)/ var(--cutimageinto))) * 1.6) 60%;
-content: var(--horizontalbg); 
-}
+  object-position: calc(-1 * ((var(--largestsideofimg) / var(--cutimageinto))) * 0) 0;
+  content: var(--horizontalbg);  
+  }
+  .second{
+  object-position: calc(-1 * ((var(--largestsideofimg) / var(--cutimageinto))) * 0.7) 30%;
+  content: var(--horizontalbg); 
+  }
+  .third{
+  object-position: calc(-1 * ((var(--largestsideofimg)/ var(--cutimageinto))) * 1.6) 60%;
+  content: var(--horizontalbg); 
+  }
 img.a {
 width: 400px;
 height: 400px;
@@ -1525,17 +1530,17 @@ grid-column-end: 11;
 overflow: auto;
 }
 .heroimg img{
-content: url('https://res.cloudinary.com/pmpartner/image/upload/c_fill,g_north,w_1440,h_960/portsmouth-ext.jpg');
+content: url('https://res.cloudinary.com/pmpartner/image/upload/c_fill,g_north,w_1440,h_800/portsmouth-ext.jpg');
 object-fit: cover;
 }
 
 .herocard{
-grid-row: 3/span 6;
+grid-row: 2/span 6;
 grid-column: 4/span 6;
 background-color: white;
 padding: 3rem 6.125rem;
 width: 45.625rem;
-height: 30.8125rem;
+xheight: 30.8125rem;
 }
 
 .slogan{
@@ -2020,17 +2025,21 @@ background: url(<path-to-image>) lightgray 50% / cover no-repea
 }
 
 .process-section{
-grid-template-rows: repeat(15,3.75rem);
+grid-template-rows: repeat(15,auto);
 height: fit-content;
+background-color: var(--Brand-Grey-Light);
+padding-block: 3.875rem;
 }
 
 .process{
 grid-column: 4 / span 18;
-grid-row: 2 / span 13
+grid-row: 2 / span 13;
+background: unset;
 }
 .process-section .content{
 grid-row: 6 / span 6;
-grid-column: 6 / span 14;
+grid-column: 4 / span 18;
+padding-bottom: 3.875rem;
 & .btnCTA{
   display:block;
   margin-inline: auto;
@@ -2169,14 +2178,14 @@ background: var(--Brand-Orange, #FC7D57);
 overflow: auto;
 display: grid;
 grid-template-columns: repeat(24, 3.75rem);
-grid-template-rows: repeat(15, 3.75rem);
+grid-template-rows: repeat(15, auto);/* 3.75rem */
 width: var(--grid-desktop-max);
 height: fit-content;
 xmargin-bottom: 6rem;
 
 }
 .case-studies{
-background: var(--Brand-Green, #96CF8C);
+background: var(--Brand-Green-Light, #96CF8C);
 grid-row: 1 / span 16;
 grid-column: 1 / span 24;
 }
@@ -2267,31 +2276,31 @@ margin-bottom: 1.875rem;
 }
 }
 /* hide and display the case study solution */
- .solutiontext {
+/*
+ .card-content .solutiontext {
   max-height: 0;
-  overflow: hidden; /* Important for hiding content when max-height is 0 */
+  overflow: hidden; 
   opacity: 0;
-  xtransition: max-height 2s ease-in-out, opacity 2s ease-in-out; /* Transition both max-height and opacity */
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
   z-index: 0;
  } 
  .toggle-checkbox {display: none;}
  .toggle-checkbox:checked + .card-content .solutiontext {
-  position: absolute;
-  bottom: 12%;
-  width: 82.5%;
-  background: var(--Brand-Grey-Light);
-  padding-block: 1rem;
-  max-height: 600px; /* Or a sufficiently large value */
   opacity: 1;
+  overflow: hidden; 
+  max-height: 12.675rem; 
+  padding-top: 0.875rem;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
 }
 .toggle-checkbox:checked + .card-content .arrow img{
   content: url('/images/close.svg');
 }
 
 .toggle-checkbox:checked + .drawer {
-  max-height: 15rem; /* Adjust this value based on the maximum height of the drawer content */
+  max-height: 15rem; 
 }
-
+*/
 .cta-section{
   grid-template-rows: repeat(7, 3.75rem);
   height: fit-content;
@@ -2304,12 +2313,13 @@ margin-bottom: 1.875rem;
     }
   & .intro{
     grid-row: 2 / span 5;
-    grid-column: 5 / span 6;
+    grid-column: 6 / span 6;
     color: white;
     text-align: unset;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    margin-top: 0;
     & p{
       margin-top: 0;
       font-size: 0.875rem;
