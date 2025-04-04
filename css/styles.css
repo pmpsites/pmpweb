@@ -30,7 +30,7 @@ navigation: auto;
 --Brand-Blue: hsl(208, 53%, 32%);
 --Brand-Brown: hsl(4, 37%, 24%);
 --Brand-Green: hsl(111, 41%, 68%);
---Brand-Green: hsl(111, 41%, 95%);
+--Brand-Green-Light: hsl(111, 41%, 95%);
 --Brand-Grey: hsl(197, 21%, 94%);
 --Brand-Grey-Light: hsl(200, 23%, 97%);
 --Brand-Orange: hsl(14, 96%, 66%);
@@ -679,7 +679,7 @@ no-padding: 1rem;
     font-size: 0.875rem;
     line-height: 1.375rem;
     overflow: hidden;
-    border-bottom: 1rem solid var(--Brand-Brown);
+    border-bottom: 1rem solid white;
     & img{
       display:none;
     }
