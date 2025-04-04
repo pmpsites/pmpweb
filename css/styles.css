@@ -30,7 +30,7 @@ navigation: auto;
 --Brand-Blue: hsl(208, 53%, 32%);
 --Brand-Brown: hsl(4, 37%, 24%);
 --Brand-Green: hsl(111, 41%, 68%);
---Brand-Green: hsl(111, 41%, 88%);
+--Brand-Green-Light: hsl(111, 41%, 88%);
 --Brand-Grey: hsl(197, 21%, 94%);
 --Brand-Grey-Light: hsl(200, 23%, 97%);
 --Brand-Orange: hsl(14, 96%, 66%);
@@ -2185,7 +2185,7 @@ xmargin-bottom: 6rem;
 
 }
 .case-studies{
-background: var(--Brand-Green, #96CF8C);
+background: var(--Brand-Green-Light, #96CF8C);
 grid-row: 1 / span 16;
 grid-column: 1 / span 24;
 }
