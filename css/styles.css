@@ -2353,10 +2353,10 @@ margin-bottom: 1.875rem;
         text-align: left;
         }
         & li::marker{
-          content: '✓  ';
+          xcontent: '✓  ';
           font-size: 2rem;
           color: var(--Brand-Green);
-          xcontent: url('/images/done.svg') '  ';
+          content: url('/images/done.svg') '  ';
         }
     }
 
