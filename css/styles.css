@@ -2269,12 +2269,12 @@ margin-bottom: 1.875rem;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: flex-start;
+    line-height: 1.875rem;
     gap: 0.3125rem;
     color: var(--Neutrals-900, #2D4149);
     font-size: 0.875rem;
     font-weight:700;
-    line-height: 1.375rem;
-    justify-content: space-between;
     cursor: pointer;
     & .arrow{
         height: 1.2rem;
