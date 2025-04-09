@@ -441,6 +441,18 @@ text-decoration-thickness: 3px;
 -moz-text-decoration-line: underline;
 text-underline-offset: 0.5em;
 }
+.footer-section .links .social #linkedinfooter{
+  width: 2.5rem;
+  height:2.5rem;
+  &  path{
+    fill: white;
+  } 
+}
+.footer-section .links .social #linkedinfooter:hover{
+  path{
+     fill: hsl(13.82deg 96.49% 66.47%);
+   }
+ }
 /* 
 ============ 
 LAYOUTS 
