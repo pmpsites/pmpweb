@@ -102,8 +102,9 @@ export async function onRequestPost(context) {
         //console.log("url hostname"+url.hostname)
         var redirecturl = url.protocol+'//'+url.hostname
         if(url.port !== '80'){ redirecturl = redirecturl +':'+url.port }
-        //console.log('redirecturl = '+redirecturl)
-        const templateurl = redirecturl+reqBody.sender;
+        
+        const templateurl = redirecturl+reqBody.sender+".html";
+        console.log('templateurl = '+templateurl);
         const thankyou = await fetch(templateurl);
         const options = {"type":reqBody.sender,"useremail":reqBody.email,"name":reqBody.name}
         return new HTMLRewriter()
