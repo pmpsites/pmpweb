@@ -101,10 +101,10 @@ export async function onRequestPost(context) {
         var redirecturl = url.protocol+'//'+url.hostname
         if(url.port !== '80'){ redirecturl = redirecturl +':'+url.port }
         
-        const templateurl = redirecturl+retBody.sender+".html";
-        console.log('templateurl = '+templateurl);
-        const thankyou = await fetch(templateurl);
-        const options = {"type":reqBody.sender,"useremail":retBody.email,"name":retBody.name}
+        //const templateurl = redirecturl+retBody.sender+".html";
+        //console.log('templateurl = '+templateurl);
+        //const thankyou = await fetch(templateurl);
+        //const options = {"type":reqBody.sender,"useremail":retBody.email,"name":retBody.name}
         //return new HTMLRewriter()
         //.on('form', new ElementHandler(options))
         //.transform(thankyou);
