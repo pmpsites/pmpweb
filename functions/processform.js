@@ -94,22 +94,20 @@ export async function onRequestPost(context) {
       };
       if (request.method === "POST") {
         const reqBody = await readRequestBody(request);
-        //const retBody = `The request body sent in was ${reqBody}`;
-        //console.log("retbody = "+retBody)
         //NO MAILING///const mailersendresponse = await sendemailtobackoffice(request, reqBody) 
-        const url = new URL(request.url)
+        //const url = new URL(request.url)
         //console.log("url hostname"+url.hostname)
-        var redirecturl = url.protocol+'//'+url.hostname
+        //var redirecturl = url.protocol+'//'+url.hostname
         //if(url.port !== '80'){ redirecturl = redirecturl +':'+url.port }
         console.log('sender = '+reqBody.sender);
-        const templateurl = redirecturl+'/'+reqBody.sender+".html";
-        console.log('templateurl = '+templateurl);
+        //const templateurl = redirecturl+'/'+reqBody.sender+".html";
+        //console.log('templateurl = '+templateurl);
         //const thankyou = await fetch(templateurl);
         //const options = {"type":reqBody.sender,"useremail":reqBody.email,"name":reqBody.name}
         //return new HTMLRewriter()
         //.on('form', new ElementHandler(options))
         //.transform(thankyou);
-        return Response.redirect(redirecturl+'/thankyou');
+        return Response.redirect(redirecturl+'/formdone');
         
       } else if (request.method === "GET") {
         return new Response("The request was a GET");
