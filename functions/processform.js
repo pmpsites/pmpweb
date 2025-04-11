@@ -13,10 +13,11 @@ export async function onRequestPost(context) {
       // An incoming element, such as `div`
       console.log(`Incoming element: ${element.tagName}`);
       // replace form with a   
-        const thanksmsg = `<p>${this.options.name} thanks for submitting the for. One of the team will contact you.</p>`
+        const thanksmsg = `<p>${this.options.name} thanks for submitting the form. One of the team will contact you.</p>`
         element.replace(thanksmsg, { html: true })
     }
   }
+
   async function handleRequest({ request, env }) {
       /**
        * rawHtmlResponse returns HTML inputted directly
@@ -95,14 +96,14 @@ export async function onRequestPost(context) {
         const reqBody = await readRequestBody(request);
         const retBody = `The request body sent in was ${reqBody}`;
         console.log("retbody = "+retBody)
-        const mailersendresponse = await sendemailtobackoffice(request, reqBody) 
+        //NO MAILING///const mailersendresponse = await sendemailtobackoffice(request, reqBody) 
         const url = new URL(request.url)
         //console.log("url hostname"+url.hostname)
         var redirecturl = url.protocol+'//'+url.hostname
         if(url.port !== '80'){ redirecturl = redirecturl +':'+url.port }
         
-        //const templateurl = redirecturl+retBody.sender+".html";
-        //console.log('templateurl = '+templateurl);
+        const templateurl = redirecturl+retBody.sender+".html";
+        console.log('templateurl = '+templateurl);
         //const thankyou = await fetch(templateurl);
         //const options = {"type":reqBody.sender,"useremail":retBody.email,"name":retBody.name}
         //return new HTMLRewriter()
