@@ -12,11 +12,9 @@ export async function onRequestPost(context) {
     element(element) {
       // An incoming element, such as `div`
       console.log(`Incoming element: ${element.tagName}`);
-      // apend hidden form fields
-      if(element.tagName === 'form'){      
+      // replace form with a   
         const thanksmsg = `<p>${this.options.name} thanks for submitting the for. One of the team will contact you.</p>`
         element.replace(thanksmsg, { html: true })
-       }
     }
   }
   async function handleRequest({ request, env }) {
@@ -103,10 +101,10 @@ export async function onRequestPost(context) {
         var redirecturl = url.protocol+'//'+url.hostname
         if(url.port !== '80'){ redirecturl = redirecturl +':'+url.port }
         
-        const templateurl = redirecturl+reqBody.sender+".html";
+        const templateurl = redirecturl+retBody.sender+".html";
         console.log('templateurl = '+templateurl);
         const thankyou = await fetch(templateurl);
-        const options = {"type":reqBody.sender,"useremail":reqBody.email,"name":reqBody.name}
+        const options = {"type":reqBody.sender,"useremail":retBody.email,"name":retBody.name}
         return new HTMLRewriter()
         .on('form', new ElementHandler(options))
         .transform(thankyou);
