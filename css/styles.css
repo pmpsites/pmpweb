@@ -388,6 +388,8 @@ background: linear-gradient(0deg, rgba(252, 125, 87, 0.15) 0%, rgba(252, 125, 87
 .white{color: #fff;}
 .brown{color: var(--Brand-Brown);}
 .orange{color: var(--Brand-Orange);}
+.bg-orange{background-color: var(--Brand-Orange);}
+.bg-blue600{background-color: var(--Neutrals-600)!important;}
 
 .btn-icon{
 display: flex;
