@@ -7,7 +7,18 @@ export async function onRequestPost(context) {
       return new Response("Error sending message", { status: 500 });
     }
   }
-  
+  class ElementHandler {
+    constructor(options) {this.options = options;}
+    element(element) {
+      // An incoming element, such as `div`
+      console.log(`Incoming element: ${element.tagName}`);
+      // apend hidden form fields
+      if(element.tagName === 'form'){      
+        const thanksmsg = `<p>${this.options.name} thanks for submitting the for. One of the team will contact you.</p>`
+        element.replace(thanksmsg, { html: true })
+       }
+    }
+  }
   async function handleRequest({ request, env }) {
       /**
        * rawHtmlResponse returns HTML inputted directly
@@ -92,7 +103,12 @@ export async function onRequestPost(context) {
         var redirecturl = url.protocol+'//'+url.hostname
         if(url.port !== '80'){ redirecturl = redirecturl +':'+url.port }
         //console.log('redirecturl = '+redirecturl)
-        return Response.redirect(redirecturl+'/thankyou');
+        const templateurl = redirecturl+reqBody.sender;
+        const thankyou = await fetch(templateurl);
+        const options = {"type":reqBody.sender,"useremail":reqBody.email,"name":reqBody.name}
+        return new HTMLRewriter()
+        .on('form', new ElementHandler(options))
+        .transform(thankyou);
         
       } else if (request.method === "GET") {
         return new Response("The request was a GET");
