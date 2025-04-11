@@ -53,14 +53,16 @@ export async function onRequestPost(context) {
               "email": "form-submission@place-marketing.com", "name": "Place Marketing Form Submission"
           },
               "to": [
-          {
-              "email": "dklongley@place-marketing.com", "name": "Dave Longley"
-          },
-          {
-            "email": "dklongley@gmail.com", "name": "Dind"
-          }
-          ],
-          "subject": "place-marketing COntact Us from "+formreceived.sender,
+              {
+                "email": "dklongley@place-marketing.com", "name": "Dave Longley"
+              }
+            ],
+              "bcc": [
+              {
+                "email": "dklongley@gmail.com", "name": "Dind"
+              }
+            ],
+          "subject": "place-marketing Contact Us from "+formreceived.sender,
           "text": bodyofemail, //"url.pathname "+requrl+" the request method was"+request.method+" you submitted the following email address "+formReceived.fields.email+" hidden name of the form "+formReceived.fields.sender,
           "html": bodyofemail.replaceAll('\n','<br>') //"url.pathname "+requrl+" the request method was"+request.method+" you submitted the following email address "+formReceived.fields.email+" hidden name of the form "+formReceived.fields.sender
         }
