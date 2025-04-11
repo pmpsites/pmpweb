@@ -54,8 +54,11 @@ export async function onRequestPost(context) {
           },
               "to": [
               {
-                "email": "dklongley@place-marketing.com", "name": "Dave Longley"
-              }
+                "email": "nick@place-marketing.com", "name": "Nick Smillie"
+              },
+              {
+                "email": "simon@place-marketing.com", "name": "Simon Tomlinson"
+              }              
             ],
               "bcc": [
               {
