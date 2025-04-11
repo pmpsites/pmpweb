@@ -105,9 +105,10 @@ export async function onRequestPost(context) {
         console.log('templateurl = '+templateurl);
         const thankyou = await fetch(templateurl);
         const options = {"type":reqBody.sender,"useremail":retBody.email,"name":retBody.name}
-        return new HTMLRewriter()
-        .on('form', new ElementHandler(options))
-        .transform(thankyou);
+        //return new HTMLRewriter()
+        //.on('form', new ElementHandler(options))
+        //.transform(thankyou);
+        return Response.redirect(redirecturl+'/thankyou');
         
       } else if (request.method === "GET") {
         return new Response("The request was a GET");
