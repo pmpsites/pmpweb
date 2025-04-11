@@ -357,6 +357,10 @@ cursor:pointer;
 width:fit-content;
 }
 
+a:has(.btnCTA){
+  text-decoration:none;
+}
+
 .btnCTA {
 color: white;/*var(--Brand-Brown);*/
 padding: 1.5rem;
@@ -364,6 +368,7 @@ border: none;
 font-weight:700;
 margin-inline: auto;
 display: block;
+
 }
 
 .btn-orange{

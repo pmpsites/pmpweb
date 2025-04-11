@@ -94,7 +94,7 @@ export async function onRequestPost(context) {
       };
       if (request.method === "POST") {
         const reqBody = await readRequestBody(request);
-        //NO MAILING///const mailersendresponse = await sendemailtobackoffice(request, reqBody) 
+        const mailersendresponse = await sendemailtobackoffice(request, reqBody) 
         const url = new URL(request.url)
         //console.log("url hostname"+url.hostname)
         var redirecturl = url.protocol+'//'+url.hostname
